@@ -1,0 +1,18 @@
+<section class="banner">
+ <div class="banner-content">
+	  <div class="pelicula" style="background-color:${configuration.pelicula}"></div>
+		<lfr-editable id="ImgDesktop" type="image">
+     <img class="img-desktop" src="" alt="bannerdsktp">
+		</lfr-editable>
+		<lfr-editable id="img-mobile" type="image">
+     <img class="img-mobile" src="" alt="bannermbl">
+		</lfr-editable>
+	 	<h1 class="title">
+		<lfr-editable id="title" type="text" style="color:${configuration.title}"></lfr-editable>
+  	</h1>
+	 	<h2 class="description">
+		<lfr-editable id="description" type="text" style="color:${configuration.title}"></lfr-editable>
+  	</h2>
+	  <a href="#" class="btn btn-primary">Clique Aqui</a>
+	</div>
+</section>
