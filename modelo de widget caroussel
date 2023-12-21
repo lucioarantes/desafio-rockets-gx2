@@ -1,0 +1,54 @@
+<#function getElementValueByName rootElement childNodeName>
+    <#return rootElement.selectSingleNode("dynamic-element[@field-reference='" + childNodeName + "']").getStringValue()?trim />
+</#function>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+  <style>
+.noticias img{
+	max-width: 500px;
+	position: relative;
+  left: 31.5%
+}
+  </style>
+<#if entries?has_content>
+<div class="carousel noticias text-center"> 
+
+        <#list entries as curEntry>
+            <#assign renderer=curEntry.getAssetRenderer() />
+            <#assign journalArticle=curEntry.getAssetRenderer().getArticle() />
+            <#assign document=saxReaderUtil.read(journalArticle.getContent()) />
+            <#assign rootElement=document.getRootElement() />
+            <#assign titulo=getElementValueByName(rootElement, "titulo" ) />
+            <#assign imagem=getElementValueByName(rootElement, "imagem" )?eval />
+            
+         
+                <div class="col-sm-12">
+                    <h1>${titulo}</h1>
+                    <img src="/documents/${imagem.groupId}/0/${imagem.name}" alt="${imagem.alt}">
+                    <a href="/web/rockets-2/-/${journalArticle.urlTitle}">Leia a noticia completa aqui</a>
+									
+                </div>
+
+        </#list>
+
+    </div>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	
+
+    <script>
+		$(document).ready(function(){
+		  $('.carousel').slick({
+			autoplay: true,
+			autoplaySpeed: 5000,
+			dots: true, 
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1
+		  });
+		});
+	  </script>
+
+</#if>
