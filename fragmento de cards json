@@ -1,0 +1,33 @@
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+			     "name": "numbersCards",
+			     "label": "Numero de Cards",
+			     "description": "number-cards",
+			     "type": "text",
+			     "typeOptions": {
+		           "placeholder": "Placeholder",
+		         },
+		      "dataType": "int";
+		      "defaultValue": "1"
+		   },
+				{
+			     "name": "colorcard",
+			     "label": "Cor do Card",
+			     "type": "text",
+		      "dataType": "string";
+		      "defaultValue": "#fff"
+		   },
+	     {
+			     "name": "botao",
+			     "label": "Cor do Botão",
+			     "type": "text",
+		      "dataType": "string";
+		      "defaultValue": "#fff"
+		   },
+		  ]
+		}	
+	]
+}
