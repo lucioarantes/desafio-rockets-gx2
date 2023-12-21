@@ -1,0 +1,9 @@
+<#if (titulo.getData())??>
+	<font size="5"> <font color ="red"> <b> ${titulo.getData()} </b> </font> </font> <br><br>
+</#if>
+<#if (imagem.getData())?? && imagem.getData() != "">
+	<center> <img alt="${imagem.getAttribute("alt")}" data-fileentryid="${imagem.getAttribute("fileEntryId")}" src="${imagem.getData()}" /></center>
+</#if>
+<#if (conteudo.getData())??>
+	${conteudo.getData()}
+</#if>
