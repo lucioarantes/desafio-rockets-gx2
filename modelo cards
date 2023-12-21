@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <#if grupocampos.getSiblings()?has_content>
+         <#list grupocampos.getSiblings() as cur_grupocampos>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <#if (cur_grupocampos.titulo.getData())??>
+                         <center><h2 class="card-title">${cur_grupocampos.titulo.getData()}</h2>
+                        </#if>
+                         <#if (cur_grupocampos.imagem.getData())?? && cur_grupocampos.imagem.getData() != "">
+                        <img alt="${cur_grupocampos.imagem.getAttribute("alt")}" data-fileentryid="${cur_grupocampos.imagem.getAttribute("fileEntryId")}" src="${cur_grupocampos.imagem.getData()}" />
+                        </#if>
+                        <#if (grupocampos.periodo.getData())??>
+                        <center><p class="description">${cur_grupocampos.periodo.getData()}</p></center>
+                        </#if>
+												<center><a href="#" class="btn btn-primary">Clique Aqui</a></center>
+                    </div>
+                </div>
+            </div>
+         </#list>
+        </#if>
+    </div>
+</div>
