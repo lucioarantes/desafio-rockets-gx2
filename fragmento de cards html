@@ -1,0 +1,25 @@
+<section>
+ <div class="container bootstrap">
+	  <div class="row">
+		[#list 1..configuration.numbersCards as index]
+		<div class="col-sm-4">
+     <div class="card" style="background-color:${configuration.colorcard}">
+			<lfr-editable id="unique-id-${index}" type="image">
+      <img class="card-img-top" src="..." alt="Selecione a Imagem">
+			</lfr-editable>
+			 <div class="card-body">
+				 <lfr-editable id="card-title-${index}" type="rich-text">
+	       <h5 class="card-title">Titulo</h5>
+				 </lfr-editable> 
+				 <lfr-editable id="description-${index}" type="text"><p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				 </lfr-editable>
+				 <lfr-editable id="link-${index}" type="link">
+	        <a href="#" class="btn btn-primary" style="background-color:${configuration.botao}">Clique Aqui</a>
+         </lfr-editable>
+        </div>
+       </div>
+      </div>
+		[/#list]
+		</div>
+	 </div>
+  </section>
